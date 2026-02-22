@@ -1,0 +1,23 @@
+/*
+LeetCode Problem: 175. Combine Two Tables
+Difficulty: Easy
+Topic: SQL (LEFT JOIN)
+
+Problem:
+Report the first name, last name, city, and state of each person.
+If the address of a person is not present in the Address table,
+report NULL instead.
+
+Approach:
+1. Use LEFT JOIN to keep all records from the Person table.
+2. Match rows using personId.
+3. If no matching address exists, city and state will return NULL.
+*/
+
+SELECT p.firstName,
+       p.lastName,
+       a.city,
+       a.state
+FROM Person p
+LEFT JOIN Address a
+ON p.personId = a.personId;
